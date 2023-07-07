@@ -12,7 +12,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // todo: 下面的AuthProvider组件似乎是要传入session的
+  // Q: 下面的AuthProvider组件似乎是要传入session的
+  // A: 不需要传session，因为AuthProvider组件内部会自动获取session
   return (
     <html lang='en'>
       <body className='bg-gray-100'>
