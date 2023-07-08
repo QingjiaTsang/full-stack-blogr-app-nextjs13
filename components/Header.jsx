@@ -79,7 +79,7 @@ const Header = (props) => {
           </div>
         )}
         <Link
-          href='/create'
+          href='/create-post'
           className='mb-3 font-bold border border-solid rounded border-gray-950 p-1 hover:bg-blue-400 hover:border-blue-400 hover:text-white'
         >
           New post
@@ -95,7 +95,7 @@ const Header = (props) => {
   }
 
   return (
-    <nav className='flex-between w-full mb-16 ml-8 pt-3'>
+    <nav className='flex-between w-full mb-20 ml-8 pt-3'>
       {left}
       {right}
     </nav>

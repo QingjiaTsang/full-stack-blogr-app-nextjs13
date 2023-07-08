@@ -39,3 +39,6 @@ next-env.d.ts
 
 /UsersphantecAppDataLocalpnpm
 /prisma/UsersphantecAppDataLocalpnpm
+
+.env
+.env.local
