@@ -7,6 +7,8 @@ const Drafts = async (props) => {
     include: { author: { select: { name: true } } },
   });
 
+  console.log(`drafts`, drafts);
+
   return (
     <div>
       <div className='mb-4 ml-8 pt-3 text-4xl font-bold'>Drafts</div>

@@ -7,6 +7,8 @@ const Blog = async (props) => {
     include: { author: { select: { name: true } } },
   });
 
+  console.log(`feed`, feed);
+
   return (
     <div>
       <div className='mb-4 ml-8 pt-3 text-4xl font-bold'>Public Feed</div>
