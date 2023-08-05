@@ -1,6 +1,8 @@
 import Post from '@/components/Post';
 import prisma from '@/lib/prisma';
 
+export const revalidate = 0;
+
 const Blog = async (props) => {
   const feed = await prisma.post.findMany({
     where: { published: true },
