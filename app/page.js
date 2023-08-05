@@ -1,13 +1,13 @@
 import Post from '@/components/Post';
 import prisma from '@/lib/prisma';
 
+export const revalidate = 1;
+
 const Blog = async (props) => {
   const feed = await prisma.post.findMany({
     where: { published: true },
     include: { author: { select: { name: true } } },
   });
-
-  console.log(`feed`, feed);
 
   return (
     <div>
