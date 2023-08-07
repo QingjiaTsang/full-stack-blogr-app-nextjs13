@@ -3,8 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
 
 const Header = (props) => {
+  const router = useRouter();
   const curPathname = usePathname();
   const { data: session, status } = useSession();
   const isActive = (pathname) => pathname === curPathname;
@@ -64,15 +66,17 @@ const Header = (props) => {
       >
         {session && (
           <div className='mt-1 flex'>
-            <div className='mr-2'>
-              <Image
-                src={session.user.image}
-                alt='avatar'
-                width='30'
-                height='30'
-                className='object-contain rounded-full'
-              />
-            </div>
+            {session.user.image && (
+              <div className='mr-2'>
+                <Image
+                  src={session.user.image}
+                  alt='avatar'
+                  width='30'
+                  height='30'
+                  className='object-contain rounded-full'
+                />
+              </div>
+            )}
             <div>
               {session.user.name} ({session.user.email})
             </div>
