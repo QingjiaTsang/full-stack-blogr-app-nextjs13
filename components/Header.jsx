@@ -32,11 +32,19 @@ const Header = (props) => {
       right = <div className={`mr-20 mb-3 font-bold`}>Validating session...</div>;
     } else {
       right = (
-        <div
-          className='mr-32 mb-3 font-bold cursor-pointer border border-solid rounded border-gray-950 p-1 hover:bg-blue-400 hover:border-blue-400 hover:text-white'
-          onClick={() => signIn()}
-        >
-          Log in
+        <div className='flex'>
+          <div
+            className='mr-3 mb-3 font-bold cursor-pointer border border-solid rounded border-gray-950 p-1 hover:bg-blue-400 hover:border-blue-400 hover:text-white'
+            onClick={() => signIn()}
+          >
+            Log in
+          </div>
+          <div
+            className='mr-32 mb-3 font-bold cursor-pointer border border-solid rounded border-gray-950 p-1 hover:bg-blue-400 hover:border-blue-400 hover:text-white'
+            onClick={() => router.push('/register')}
+          >
+            Register
+          </div>
         </div>
       );
     }
